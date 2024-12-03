@@ -1,5 +1,6 @@
 use super::parse_input_data;
 
+#[allow(unused)]
 pub fn calculate_solution(input_data: String) -> String {
     let mut input_numbers: [Vec<u32>; 2] = parse_input_data(input_data);
 
