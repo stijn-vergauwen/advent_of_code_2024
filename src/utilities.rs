@@ -7,7 +7,7 @@ pub enum FileType {
     Result,
 }
 
-pub fn save_data_to_asset_folder(data: String, day: u8, challenge: u8) -> Result<(), io::Error> {
+pub fn save_result_to_asset_folder(data: String, day: u8, challenge: u8) -> Result<(), io::Error> {
     let path_to_dir = get_path_to_dir(day);
 
     if !fs::exists(&path_to_dir).unwrap_or(false) {
@@ -17,7 +17,7 @@ pub fn save_data_to_asset_folder(data: String, day: u8, challenge: u8) -> Result
     fs::write(get_path_to_file(FileType::Result, day, challenge), data)
 }
 
-pub fn load_data_from_asset_folder(day: u8, challenge: u8) -> Result<String, io::Error> {
+pub fn load_input_from_asset_folder(day: u8, challenge: u8) -> Result<String, io::Error> {
     fs::read_to_string(get_path_to_file(FileType::Input, day, challenge))
 }
 
