@@ -1,18 +1,5 @@
-pub fn calculate_solution(input_data: String) -> String {
-    let mut input_numbers: [Vec<u32>; 2] = parse_input_data(input_data);
-
-    for numbers in &mut input_numbers {
-        numbers.sort();
-    }
-
-    let summed_distance = input_numbers[0]
-        .iter()
-        .zip(input_numbers[1].iter())
-        .map(|(a, b)| a.abs_diff(*b))
-        .sum::<u32>();
-
-    format!("Summed distance: {}", summed_distance)
-}
+pub mod part_1;
+pub mod part_2;
 
 fn parse_input_data(input_data: String) -> [Vec<u32>; 2] {
     let mut number_arrays = [Vec::with_capacity(1000), Vec::with_capacity(1000)];
